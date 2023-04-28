@@ -16,10 +16,11 @@ overflow: hidden;
   border-radius: 0;
 }
 `
-export const Avatar = styled.img` 
+export const Avatar = styled.img`
+  margin-top: 20px;
   overflow: hidden;
+  border-radius: 10%;
   width: 450px;
- border-radius: 10%;
  `
 
 export const UserData = styled.p`
