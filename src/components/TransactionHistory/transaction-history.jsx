@@ -1,24 +1,24 @@
 import PropTypes from "prop-types";
-import { Table, Thead, Tr, Th, Td } from "./transaction-history-styled"; 
+import { Table, Thead, Th, Td } from "./transaction-history-styled"; 
 
 const TransactionsHistory = ({ items }) => {
   return (
     <Table className="transaction-history">
           <Thead>
-            <Tr>
+            <tr>
               <Th>Type</Th>
               <Th>Amount</Th>
               <Th>Currency</Th>
-            </Tr>
+            </tr>
           </Thead>
       {items.map(({ id, type, amount, currency }) => (
         
               <tbody key={id}>
-              <Tr >
+              <tr >
               <Td>{type}</Td>
               <Td>{amount}</Td>
               <Td>{currency}</Td>
-            </Tr>
+            </tr>
           </tbody>
         
       ))}
@@ -29,5 +29,10 @@ const TransactionsHistory = ({ items }) => {
 export default TransactionsHistory;
 
 TransactionsHistory.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({})),
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    amount: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired
+  })),
 };
